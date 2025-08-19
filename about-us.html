@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sutera Engineering Sdn. Bhd. - About Us</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+
+      body {
+        background-color: #0a0a0a;
+        color: #ffffff;
+        font-family: "Roboto", sans-serif;
+      }
+
+      /* Navbar */
+      .navbar {
+        background-color: rgba(
+          0,
+          33,
+          71,
+          0.9
+        ) !important; /* Navy blue with transparency */
+        backdrop-filter: blur(10px); /* Blur effect */
+        padding: 15px 20px;
+        border-bottom: 2px solid #ff6f00; /* Orange border */
+        transition: all 0.3s ease;
+      }
+
+      .navbar.scrolled {
+        background-color: rgba(
+          0,
+          33,
+          71,
+          0.95
+        ) !important; /* Darker on scroll */
+      }
+
+      .navbar-brand {
+        color: #ffffff !important;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+      }
+
+      .navbar-brand img {
+        height: 50px;
+        margin-right: 10px;
+        border-radius: 50%; /* Circular logo */
+        border: 2px solid #ff6f00; /* Orange border */
+        padding: 5px;
+      }
+
+      .nav-link {
+        color: #ffffff !important;
+        font-size: 1rem;
+        font-weight: 500;
+        margin: 0 10px;
+        transition: color 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: #ff6f00 !important; /* Orange hover effect */
+      }
+
+      .dropdown-menu {
+        background-color: rgba(
+          0,
+          33,
+          71,
+          0.9
+        ) !important; /* Navy blue dropdown */
+        backdrop-filter: blur(10px); /* Blur effect */
+        border: 1px solid #ff6f00; /* Orange border */
+      }
+
+      .dropdown-item {
+        color: #ffffff !important;
+        font-size: 0.9rem;
+        transition: background-color 0.3s ease;
+      }
+
+      .dropdown-item:hover {
+        background-color: rgba(255, 111, 0, 0.2); /* Orange hover effect */
+      }
+      /* Hero Section */
+      .hero {
+        color: #ffffff;
+        padding: 20px;
+        min-height: 60vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 33, 71, 0.8),
+            rgba(0, 33, 71, 0.8)
+          ),
+          url("./images/about-us.jpg"); /* Background image */
+        background-size: cover;
+        background-position: center;
+      }
+
+      .hero h1 {
+        font-size: 4rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        animation: fadeInUp 1.5s ease-in-out;
+        color: #ff6f00; /* Orange text */
+      }
+
+      .hero p {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+        animation: fadeInUp 2s ease-in-out;
+      }
+
+      /* About Section */
+      .about-section {
+        padding: 80px 20px;
+        background-color: rgba(0, 33, 71, 0.9); /* Navy blue */
+        color: #ffffff;
+      }
+
+      .about-section h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 30px;
+        color: #ff6f00; /* Orange text */
+        text-align: center;
+      }
+
+      .about-section p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        text-align: center; /* Centered text */
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      /* Mission and Vision Section */
+      .mission-vision {
+        padding: 80px 20px;
+        background-color: rgba(0, 1, 65, 0.9); /* Dark background */
+      }
+
+      .mission-vision h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 40px;
+        color: #ff6f00; /* Orange text */
+        text-align: center;
+      }
+
+      .mission-vision .card {
+        background-color: rgba(0, 33, 71, 0.9); /* Navy blue */
+        border: 2px solid #ff6f00; /* Orange border */
+        border-radius: 15px;
+        padding: 30px;
+        margin-bottom: 30px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .mission-vision .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+
+      .mission-vision .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(255, 111, 0, 0.3); /* Orange shadow */
+      }
+
+      .mission-vision .card h3 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #ff6f00; /* Orange text */
+      }
+
+      .mission-vision .card p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #ffffff;
+      }
+
+      /* Core Values Section */
+      .core-values {
+        padding: 80px 20px;
+        background-color: rgba(0, 33, 71, 0.9); /* Navy blue */
+      }
+
+      .core-values h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 40px;
+        color: #ff6f00; /* Orange text */
+        text-align: center;
+      }
+
+      .core-values .card {
+        background-color: rgba(10, 10, 10, 0.9); /* Dark background */
+        border: 2px solid #ff6f00; /* Orange border */
+        border-radius: 15px;
+        padding: 30px;
+        margin-bottom: 30px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .core-values .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(255, 111, 0, 0.3); /* Orange shadow */
+      }
+
+      .core-values .card h3 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #ff6f00; /* Orange text */
+      }
+
+      .core-values .card p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #ffffff;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background-color: rgba(0, 33, 71, 0.9) !important; /* Navy blue */
+        color: #ffffff;
+        padding: 15px 0;
+        border-top: 2px solid #ff6f00; /* Orange border */
+      }
+
+      .footer h5 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        color: #ff6f00; /* Orange text */
+      }
+
+      .footer p {
+        font-size: 1rem;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .footer p i {
+        font-size: 1.2rem;
+        color: #ff6f00; /* Orange icon */
+      }
+
+      .footer a {
+        color: #ffffff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      .social-icons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      .social-icon {
+        font-size: 1.5rem;
+        color: #ffffff;
+        transition: color 0.3s ease;
+      }
+
+      .social-icon:hover {
+        color: #ff6f00; /* Orange hover effect */
+      }
+
+      .footer-link {
+        color: #ffffff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-link:hover {
+        color: #ff6f00; /* Orange hover effect */
+      }
+
+      /* Keyframes for Animations */
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="./images/logo.jpg" alt="Sutera Engineering Logo" />
+          Sutera Engineering
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about-us.html">About Us</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="partnersDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Services
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="partnersDropdown">
+                <li>
+                  <a class="dropdown-item" href="construction.html"
+                    >Construction</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="technology.html">Technology</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>About Us</h1>
+      <p>Building the Future with Excellence and Integrity</p>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+      <div class="container">
+        <h2>Who We Are</h2>
+        <p>
+          Sutera Engineering Sdn. Bhd. is a 100% Bumiputera-owned company,
+          established in 2007. We specialize in construction, project
+          management, civil engineering, and property development. Registered as
+          a G6 contractor with CIDB Malaysia, our experienced team is dedicated
+          to delivering quality projects.
+        </p>
+      </div>
+    </section>
+
+    <!-- Mission and Vision Section -->
+    <section class="mission-vision">
+      <div class="container">
+        <h2>Our Mission & Vision</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card">
+              <img src="./images/vission.jpg" alt="Mission Image" />
+              <h3>Our Vision</h3>
+              <p>
+                Our vision is to be the most sought-after and reliable
+                construction services provider, and to improve ourselves
+                constantly for the benefit of our clients.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <img src="./images/mission.jpg" alt="Vision Image" />
+              <h3>Our Mission</h3>
+              <p>
+                Our mission is to understand the clients’ requirements and
+                undertake to ensure successful project implementation with a
+                high level of quality, within the stipulated time and cost
+                constraints. Our staff, being the most important asset, are
+                fully committed to working as a team with high integrity to
+                achieve this mission.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Values Section -->
+    <section class="core-values">
+      <div class="container">
+        <h2>Our Core Values</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card">
+              <h3>Integrity</h3>
+              <p>
+                We uphold the highest standards of honesty and ethics in all our
+                dealings.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <h3>Excellence</h3>
+              <p>
+                We strive for excellence in every project, ensuring quality and
+                precision.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <h3>Innovation</h3>
+              <p>
+                We embrace innovation to deliver cutting-edge solutions for our
+                clients.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer text-center text-lg-start">
+      <div class="container py-4">
+        <div class="row">
+          <!-- Company Info -->
+          <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+            <h5>SUTERA ENGINEERING SDN. BHD.</h5>
+            <p>
+              <i class="bi bi-envelope"></i>
+              <a href="mailto:info@profilesutera.com"
+                >suteraengineering84@gmail.com</a
+              >
+            </p>
+            <p>
+              <i class="bi bi-telephone"></i>
+              <a href="tel:+60-123-456789">+60 13-203 8266</a>
+            </p>
+            <p>
+              <i class="bi bi-geo-alt"></i>
+              NO. 76-2, JALAN PRIMA, SG3, Taman Prima Sri Gombak, 68100 Batu
+              Caves, Selangor, Malaysia.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html" class="footer-link">Home</a></li>
+              <li><a href="about-us.html" class="footer-link">About Us</a></li>
+              <li>
+                <a href="construction.html" class="footer-link">Construction</a>
+              </li>
+              <li>
+                <a href="technology.html" class="footer-link">Technology</a>
+              </li>
+              <li><a href="contact.html" class="footer-link">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Social Media -->
+          <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+            <h5>Follow Us</h5>
+            <p>Stay connected with us on social media for updates and news.</p>
+            <div class="social-icons">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                class="social-icon"
+              >
+                <i class="bi bi-facebook"></i>
+              </a>
+              <a href="https://twitter.com" target="_blank" class="social-icon">
+                <i class="bi bi-twitter"></i>
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                class="social-icon"
+              >
+                <i class="bi bi-instagram"></i>
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                class="social-icon"
+              >
+                <i class="bi bi-linkedin"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright Notice -->
+      <div
+        class="text-center p-3"
+        style="background-color: rgba(0, 33, 71, 0.9)"
+      >
+        © 2023 Sutera Engineering Sdn. Bhd. All rights reserved.
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Add scroll effect for navbar -->
+    <script>
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+    </script>
+  </body>
+</html>
